@@ -5,7 +5,7 @@ import numpy as np
 import nltk
 try:
     nltk.data.find('stemmers/rslp')
-except nltk.downloader.DownloadError:
+except LookupError:
     nltk.download('rslp')
 
 # Agora, o resto do seu código
