@@ -11,18 +11,22 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from datetime import datetime
-from shared.utils import (calcular_match_score, 
-                          carregar_dados, salvar_dados, 
-                          encerrar_vaga, reabrir_vaga, 
-                          parse_date_safe, tokenizer, 
-                          calcular_fator_cultural, 
-                          calcular_fator_salarial,
-                          calcular_fator_engajamento,
-                          calcular_fator_tecnico,
-                          calcular_fator_idioma,
-                          calcular_fator_experiencia_final,
+from shared.utils import (tokenizer, 
+                          carregar_dados, 
+                          salvar_dados, 
+                          encerrar_vaga, 
+                          reabrir_vaga, 
+                          parse_date_safe, 
                           ler_jsons,
                           processar_curriculos)
+
+from model.model import (calcular_fator_tecnico,
+                         calcular_fator_idioma,
+                         calcular_fator_salarial,
+                         calcular_fator_engajamento,
+                         calcular_fator_cultural,
+                         calcular_fator_experiencia_final,
+                         calcular_match_score)
 
 # Configuração da página
 st.set_page_config(page_title="SeleAI - Sistema de Triagem", page_icon="🤖", layout="wide")
