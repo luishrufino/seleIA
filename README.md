@@ -101,8 +101,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-O modelo será salvo em `models/obesity_model.joblib`.
-
 ### 3. Configurar o Acesso à AWS S3
 
 ```bash
