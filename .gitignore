@@ -2,3 +2,5 @@ config.py
 myenv/
 **/secrets.toml
 bases/
+Arquitetura.xlsx
+SeleIA.pptx

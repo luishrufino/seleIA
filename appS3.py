@@ -57,6 +57,7 @@ def login():
         else:
             st.sidebar.error("Senha incorreta")
 
+
 # =============================================================================
 # MENUS E PÁGINAS
 # =============================================================================
@@ -81,6 +82,7 @@ def main():
         mostrar_resultados()
     elif page == "👤 Novo Candidato":
         cadastrar_candidato()
+
 
 # =============================================================================
 # CONFIGURAÇÕES DE DASHBOARD
