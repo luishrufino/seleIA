@@ -1,8 +1,14 @@
 # =============================================================================
 # IMPORTAÇÕES E CONFIGURAÇÃO
 # =============================================================================
-
 import numpy as np
+import nltk
+try:
+    nltk.data.find('stemmers/rslp')
+except nltk.downloader.DownloadError:
+    nltk.download('rslp')
+
+# Agora, o resto do seu código
 from nltk.stem import RSLPStemmer
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
