@@ -127,7 +127,7 @@ S3_BUCKET_NAME = "seu-nome-do-bucket-aqui"
 ---
 ## 🌐 Deploy no Streamlit Community Cloud
 
-Acesso online: https://obsesityfastcheck-gbiqph9l9czs3hg3krvpeu.streamlit.app/
+Acesso online: https://seleai-s3.streamlit.app/
 
 O deploy desta aplicação é muito simples:
 
