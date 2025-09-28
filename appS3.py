@@ -193,21 +193,21 @@ def criar_vaga():
             empresa = st.text_input("Empresa Contratante*")
             titulo_vaga = st.text_input("Título da Vaga*")
             nivel = st.selectbox("Nível Profissional*", ["Estágio","Júnior", "Pleno", "Sênior", "Especialista"])
+            modelo_trabalho = st.selectbox("Modelo de Trabalho*", ["Presencial", "Híbrido", "Remoto"])
+            area_atuacao = st.text_input("Área de Atuação*")
         with col2:
             consultor = st.text_input("Consultor Responsável*")
             email = st.text_input("Email do consultor*")
             solicitante = st.text_input("Solicitante*")
             contato = st.text_input("Contato*")
+            prazo = st.text_input("Prazo de Contratação", "Indeterminado")
         
         # Tipo de contratação
         col3, col4 = st.columns(2)
         with col3:
-            modelo_trabalho = st.selectbox("Modelo de Trabalho*", ["Presencial", "Híbrido", "Remoto"])
-            area_atuacao = st.text_input("Área de Atuação*")
             pcd = st.checkbox("Vaga específica para PCD")
 
         with col4:
-            prazo = st.text_input("Prazo de Contratação", "Indeterminado")
             tipo_contratacao = st.radio("Tipo de Contratação*", ["CLT", "PJ"])
             
         
@@ -229,8 +229,8 @@ def criar_vaga():
                 ["Ensino Médio", "Técnico", "Graduação", "Pós-graduação", "Mestrado", "Doutorado"])
             ingles = st.selectbox("Inglês Mínimo", ["Não necessário", "Básico", "Intermediário", "Avançado", "Fluente"])
             espanhol = st.selectbox("Espanhol Mínimo", ["Não necessário", "Básico", "Intermediário", "Avançado", "Fluente"])
-        with col9:
             viagens = st.checkbox("Disponibilidade para viagens")
+        with col9:
             hab_comportamentais = st.text_area(
                 "Habilidades Comportamentais* (separadas por vírgula)",
                 placeholder="Exemplo: Trabalho em equipe, Proatividade, Comunicação, Liderança, Resiliência, Flexibilidade, Pensamento crítico"
