@@ -52,22 +52,22 @@ seleAI/
 
 O score de compatibilidade final entre o candidato e a vaga é a soma ponderada de seis fatores principais. O peso de cada fator é definido pelo gestor no momento da criação da vaga, permitindo adaptar o algoritmo às necessidades específicas de cada posição.
 
-1. **Fator Técnico (`calcular_fator_tecnico`)**
+1. **Fator Técnico (`calcular_fator_tecnico`):**
 Utiliza o modelo `SentenceTransformer("all-MiniLM-L6-v2")` para converter habilidades técnicas (como Python, SQL, AWS) em vetores numéricos. Em seguida, a similaridade de cosseno é usada para comparar as habilidades do candidato com as da vaga, resultando em um score de 0 a 1 (1 = match perfeito). Para garantir a precisão, a técnica de stemming (`RSLPStemmer`) é aplicada para reduzir palavras a suas raízes, como "programação" para "programa".
 
-2. **Fator Cultural (`calcular_fator_cultural`)**
+2. **Fator Cultural (`calcular_fator_cultural`):**
 Funciona de forma similar ao fator técnico. Ele compara as habilidades comportamentais do candidato (como proatividade, liderança, comunicação) com as da vaga, utilizando `SentenceTransformer` e `stemming` para calcular a similaridade de cosseno.
 
-3. **Fator de Idioma (`calcular_fator_idioma`)**
+3. **Fator de Idioma (`calcular_fator_idioma`):**
 Avalia o nível de proficiência em inglês e espanhol. Para cada idioma, o candidato recebe 1 ponto se o seu nível de proficiência for igual ou superior ao requisito mínimo da vaga. O score final é a média dos pontos de cada idioma, variando de 0 a 1.
 
-4. **Fator Salarial (`calcular_fator_salarial`)**
+4. **Fator Salarial (`calcular_fator_salarial`):**
 Compara a pretensão salarial do candidato com a faixa salarial oferecida na vaga. O cálculo é feito em faixas, premiando a compatibilidade exata com um score de 1.0 e diminuindo o score progressivamente conforme a pretensão se afasta do intervalo ideal.
 
-5. **Fator de Engajamento (`calcular_fator_engajamento`)**
+5. **Fator de Engajamento (`calcular_fator_engajamento`):**
 Avalia a compatibilidade de preferências e condições de trabalho. Considera o modelo de trabalho (remoto, presencial, híbrido) e o tipo de contrato (CLT, PJ), concedendo pontos por cada correspondência. O score de viagens é 0.5 se for compatível. O score total é normalizado para um valor entre 0 e 1.
 
-6. **Fator de Experiência (`calcular_fator_experiencia_final`)**
+6. **Fator de Experiência (`calcular_fator_experiencia_final`):**
 Este é um **fator composto que combina a similaridade entre a área de atuação do candidato e a área da vaga com o tempo de experiência do candidato e o nível exigido** (Júnior, Pleno, Sênior). Ele usa uma combinação de `similaridade de cosseno` para a área e um cálculo de pontuação baseado no tempo de experiência para criar um score único e abrangente.
 
 

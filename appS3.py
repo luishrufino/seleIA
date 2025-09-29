@@ -457,7 +457,7 @@ def cadastrar_candidato():
                 f"candidato_{novo_candidato['codigo_candidato']}_{vaga_selecionada['id']}.json", 
                 novo_candidato
             )
-            st.success(f"✅ Candidatura enviada! Score de match: {score:.2%}, {fatores}")
+            st.success(f"✅ Candidatura enviada!")
 
 # =============================================================================
 # RESULTADOS E MATCHMAKING
